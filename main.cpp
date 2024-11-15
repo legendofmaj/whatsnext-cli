@@ -58,6 +58,18 @@ int genRand(int max)
         cout << arr[i] << endl;
     }
 
+    //map
+    map<int, string> mapping;
+    for (int i=0;i<max;i++)
+    {
+        mapping.insert(make_pair(arr[i], input[i]));
+    }
+
+    //print map
+    for(auto i : mapping)
+    {
+        cout << i.first << " maps to: " << i.second << endl;
+    }
     return 0; //later on this should return the array
 }
 
