@@ -6,20 +6,14 @@ using namespace std;
 
 int genRand(int max);
 void getStrings(int max);
+void test();
 
-//variables to change
-int globalMax = 5;
+//given variables
+string input [] = {"input1", "input2", "input3", "input4"};
 
 int main()
 {
-    cout << "How many random numbers to generate?" << endl;
-    cin >> globalMax;
-    cout << "generating random values..." << endl;
-
-    genRand(globalMax);
-
-    cout << "enter strings" << endl;
-    getStrings(globalMax);
+    
 }
 
 int genRand(int max)
@@ -53,10 +47,17 @@ void getStrings(int max)
     {
         cout << names[i] << endl;
     }
+}
 
-    //concept: map to strings
-    // for (int i=0; i<max; i++)
-    // {
-    //     map<int, string> names = {{randNum[i], names[i]}};
-    // }
+void test()
+{
+    int localMax = 4;
+
+    int randNum[localMax] = {3, 1, 2, 0};
+    string names[localMax] = {"test1", "test2", "test3", "test4"};
+
+    for (int i=0; i<localMax; i++)
+    {
+        map<int, string> names = {{randNum[i], names[i]}};
+    }
 }
