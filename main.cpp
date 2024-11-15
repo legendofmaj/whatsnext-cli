@@ -13,7 +13,13 @@ string input [] = {"input1", "input2", "input3", "input4"};
 
 int main()
 {
-    
+    //determine the size of the array
+    int c;
+    for(auto i: input)
+    {
+        c++;
+    }
+    cout << "size of the array: " << c << endl;
 }
 
 int genRand(int max)
