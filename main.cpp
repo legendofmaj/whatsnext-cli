@@ -1,12 +1,13 @@
 #include <iostream>
 #include <cstdlib> //library used for random number generation
 #include <map>
+#include <algorithm> //for std::find
+#include <iterator> //for std::begin and std::end
 
 using namespace std;
 
 int genRand(int max);
 void getStrings(int max);
-void test();
 
 //given variables
 string input [] = {"input1", "input2", "input3", "input4"};
@@ -28,10 +29,29 @@ int main()
 int genRand(int max)
 {
     int arr[max];
+    bool exists = false;
     srand(time(NULL));
     for (int i=0;i<max;i++)
     {
-        arr[i] = rand() % (max+1);
+        int val = (rand() % max)+1;
+
+        //check for val in array
+        for (int i=0;i<max;i++)
+        {
+            if(arr[i] == val)
+            {
+                exists = true;
+            }
+        }
+        if (exists == false)
+        {
+            arr[i] = val;
+        }
+        else 
+        {
+            i--;
+        }
+        exists = false;
     }
 
     //print
