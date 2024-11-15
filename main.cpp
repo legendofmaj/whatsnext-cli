@@ -77,16 +77,3 @@ void getStrings(int max)
         cout << names[i] << endl;
     }
 }
-
-void test()
-{
-    int localMax = 4;
-
-    int randNum[localMax] = {3, 1, 2, 0};
-    string names[localMax] = {"test1", "test2", "test3", "test4"};
-
-    for (int i=0; i<localMax; i++)
-    {
-        map<int, string> names = {{randNum[i], names[i]}};
-    }
-}
