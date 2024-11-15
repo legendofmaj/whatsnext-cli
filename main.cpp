@@ -1,8 +1,6 @@
 #include <iostream>
 #include <cstdlib> //library used for random number generation
 #include <map>
-#include <algorithm> //for std::find
-#include <iterator> //for std::begin and std::end
 
 using namespace std;
 
