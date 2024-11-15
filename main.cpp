@@ -20,6 +20,9 @@ int main()
         c++;
     }
     cout << "size of the array: " << c << endl;
+
+    //generate an array of c different values
+    genRand(c);
 }
 
 int genRand(int max)
