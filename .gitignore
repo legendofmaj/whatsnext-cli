@@ -2,3 +2,5 @@
 main
 #vscode config
 .vscode
+#whatsnext config
+config.txt
