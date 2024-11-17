@@ -11,6 +11,7 @@ void checkForSave();
 void writeFile();
 void getFileLength();
 void readFile(int numStrings);
+void mainMenu();
 
 //variables
 string* strings;
@@ -38,6 +39,8 @@ int main()
         getFileLength();
         readFile(generalInfo.fileLength);
     }
+
+    mainMenu();
 
     //generate an array of fileLength different values
     genRand(generalInfo.fileLength);
@@ -141,7 +144,41 @@ int genRand(int max)
     //print map
     for(auto i : mapping)
     {
-        cout << i.first << " maps to: " << i.second << endl;
+        cout << "Your " << i.first << ". " << "string type (to be added)" << " is " << i.second << endl;
     }
     return 0;
+}
+
+void mainMenu()
+{
+    //main menu
+    cout << "Welcome to \033[1mwhatsnext-cli\033[0m" << endl;
+    cout << "Type \e[3mhelp\e[0m for additional information" << endl; //maybe only on first boot
+
+    //look for input: help
+    string in;
+    while (true)
+    {
+        cin >> in;
+        if (in == "help")
+        {
+            //print all commands
+            cout << "\e[4mlist of help commands\e[0m: " << endl;
+            cout << "help -> get a list of commands" << endl;
+            cout << "exit -> quit the program" << endl;
+            cout << "start -> start the program with the default configuration" << endl;
+            cout << "\e[1mmore commands will be added in the future\e[0m" << endl;
+            cin >> in;
+        }
+        if (in == "exit")
+        {
+            //close program
+            exit(0);
+        }
+        if (in == "start")
+        {
+            break;
+        }
+        //ToDo: add valid input check
+    }
 }
