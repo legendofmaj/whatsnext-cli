@@ -2,6 +2,7 @@
 #include <cstdlib> //library used for random number generation
 #include <map>
 #include <fstream>
+#include <sys/stat.h> //for mkdir
 
 using namespace std;
 
@@ -20,6 +21,7 @@ class SaveSystem
 {
     public:
         string filename = "config.txt";
+        const char* filepath = "/home/michi/Documents/.whatsnext-config/";
         string line;
         bool fileExists = false;
         int fileLength;
@@ -51,7 +53,7 @@ int main()
 
 void checkForSave()
 {
-    ifstream saveFile(generalInfo.filename);
+    ifstream saveFile(generalInfo.filepath + generalInfo.filename);
     generalInfo.fileExists = saveFile.is_open();
     saveFile.close();
 }
@@ -64,7 +66,10 @@ void writeFile()
 	cout << "First enter the type of string you whish to use, then the names of each string" << endl;
 	cout << "If you have entered all your strings, type esc to stop!" << endl;
 
-	ofstream saveFile(generalInfo.filename);
+    //create folder
+    mkdir(generalInfo.filepath, 0777); //if the output of this is -1 there has been an error
+
+	ofstream saveFile(generalInfo.filepath + generalInfo.filename);
 	while(true)
 	{
 		cin >> line;
@@ -81,7 +86,7 @@ void getFileLength()
 {
 	string line;
 
-	ifstream saveFile(generalInfo.filename);
+	ifstream saveFile(generalInfo.filepath + generalInfo.filename);
 	while(getline(saveFile, line)) //As soon as no new lines can be read the function is quit
 	{
 		generalInfo.fileLength++;
@@ -97,7 +102,7 @@ void readFile(int numStrings)
 	//Allocate memory
 	strings = new string[numStrings];
 
-	ifstream saveFile(generalInfo.filename);
+	ifstream saveFile(generalInfo.filepath + generalInfo.filename);
 	while(getline(saveFile, line))
 	{
 		strings[i] = line;

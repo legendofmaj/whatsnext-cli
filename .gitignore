@@ -4,3 +4,7 @@ main
 .vscode
 #whatsnext config
 config.txt
+#test file
+test.cpp
+#test executable
+test
