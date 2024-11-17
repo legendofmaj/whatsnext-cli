@@ -35,6 +35,8 @@ int main()
     if (generalInfo.fileExists == false)
     {
         writeFile();
+        getFileLength();
+        readFile(generalInfo.fileLength);
     }
     else
     {
