@@ -69,7 +69,10 @@ void writeFile()
 	cout << "If you have entered all your strings, type esc to stop!" << endl;
 
     //create folder
-    mkdir(generalInfo.filepath, 0777); //if the output of this is -1 there has been an error
+    if(mkdir(generalInfo.filepath, 0777) == -1)
+    {
+        cout << "Failed to create folder." << endl;
+    }
 
 	ofstream saveFile(generalInfo.filepath + generalInfo.filename);
 	while(true)
