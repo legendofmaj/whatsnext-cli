@@ -2,8 +2,8 @@
 #include <cstdlib> //library used for random number generation
 #include <map>
 #include <fstream>
-#include <sys/stat.h> //for mkdir
-#include <filesystem> //to list files in a directory
+#include <sys/stat.h> //to check if folder is empty
+#include <filesystem> //to list files in a directory, mkdir / rmdir
 
 using namespace std;
 namespace fs = std::filesystem;
@@ -97,10 +97,7 @@ void writeFile()
 	cout << "If you have entered all your strings, type esc to stop!" << endl;
 
     //create folder
-    if(mkdir(generalInfo.filepath, 0777) == -1)
-    {
-        cout << "Failed to create folder." << endl;
-    }
+    filesystem::create_directory(generalInfo.filepath) == -1;
     //get name
     cout << "Enter the type of input you wish to use ";
     cin >> generalInfo.inputtype;
@@ -196,9 +193,9 @@ void mainMenu()
 {
     //main menu
     cout << "Welcome to \033[1mwhatsnext-cli\033[0m" << endl;
-    cout << "Type \e[3mhelp\e[0m for additional information" << endl; //maybe only on first boot
+    cout << "Type \e[3mhelp\e[0m for additional information" << endl;
 
-    //look for input: help
+    //look for input
     string in;
     while (true)
     {
@@ -225,8 +222,17 @@ void mainMenu()
         }
         if (in == "clear")
         {
+            //command that clears the console on all platforms
             cout << "\033[2J\033[1;1H";
         }
-        //ToDo: add valid input check
+        if (in == "delete")
+        {
+            filesystem::remove_all(generalInfo.filepath);
+            cout << "The current configuration has been deleted" << endl;
+        }
+        else 
+        {
+            cout << "Unknown command. Type \e[3mhelp\e[0m for additional information" << endl;
+        }
     }
 }
