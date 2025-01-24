@@ -17,24 +17,21 @@ int genRand(int max);
 void input();
 void mainMenu();
 
-//this class will later no longer be necessary
 class SaveSystem
 {
     public:
-        string inputType; //= inputs.front()
-        string line;
-        int inLength; //= inputs.size()
+        string inputType;
 };
 SaveSystem generalInfo;
 
 int main()
 {
-    //get user input
-    input();
-    
     //open main ui
     //mainMenu();
 
+    //get user input
+    input();
+    
     //generate an array of inLength different values
     genRand(inputs.size());
 
@@ -46,8 +43,9 @@ void input()
     //get inputType
     cout << "please enter the type of objects you want to randomize: ";
     cin >> generalInfo.inputType;
-    
+
     //get items to sort
+    cout << "please enter the objects you want to randomize:" << endl;
     string line;
 
     while(true)
@@ -59,13 +57,13 @@ void input()
         }
         inputs.push_back(line);
     }
-    //debug
-    cout << "print list of inputs:" << endl;
-    for (string element : inputs)
-    {
-        cout << element << "; ";
-    }
-    cout << endl;
+    // //debug
+    // cout << "print list of inputs:" << endl;
+    // for (string element : inputs)
+    // {
+    //     cout << element << "; ";
+    // }
+    // cout << endl;
 }
 
 int genRand(int max)
@@ -97,13 +95,13 @@ int genRand(int max)
         }
         exists = false;
     }
-    //debug
-    cout << "print array of numbers" << endl;
-    for (int i = 0; i < max; i++)
-    {
-        cout << arr[i] << "; ";
-    }
-    cout << endl;
+    // //debug
+    // cout << "print array of numbers" << endl;
+    // for (int i = 0; i < max; i++)
+    // {
+    //     cout << arr[i] << "; ";
+    // }
+    // cout << endl;
 
     //map 
     map<int, string> mapping;
