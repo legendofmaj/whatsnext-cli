@@ -79,7 +79,7 @@ int genRand(int max)
         exists = false;
     }
 
-    //map 
+    //map
     map<int, string> mapping;
 
     int numCounter = 0;
@@ -119,7 +119,6 @@ void mainMenu()
             cout << "exit -> quit the program" << endl;
             cout << "clear -> clear the terminal" << endl;
             cout << "start -> start the program with the default configuration" << endl;
-            cout << "\e[1mmore commands will be added in the future\e[0m" << endl;
             cin >> in;
         }
         if (in == "exit")
