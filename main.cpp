@@ -21,7 +21,7 @@ void mainMenu();
 class SaveSystem
 {
     public:
-        string inputtype; //= inputs.front()
+        string inputType; //= inputs.front()
         string line;
         int inLength; //= inputs.size()
 };
@@ -43,6 +43,11 @@ int main()
 
 void input()
 {
+    //get inputType
+    cout << "please enter the type of objects you want to randomize: ";
+    cin >> generalInfo.inputType;
+    
+    //get items to sort
     string line;
 
     while(true)
@@ -116,7 +121,7 @@ int genRand(int max)
     //print map
     for(auto i : mapping)
     {
-        cout << "Your " << i.first << ". " << generalInfo.inputtype << " is " << i.second << endl;
+        cout << "Your " << i.first << ". " << generalInfo.inputType << " is " << i.second << endl;
     }
     return 0;
 }
