@@ -5,11 +5,6 @@
 
 using namespace std;
 
-//To-Do:
-// - replace input logic [Done]
-// - rework mapping part of genRand [currently stuck]
-// - rework / replace main menu logic
-
 //variables
 string inputType;
 list<string> inputs;
@@ -26,7 +21,7 @@ int main()
     //get user input
     input();
 
-    //generate an array of inLength different values
+    //generate an array of amount of inputs different values
     genRand(inputs.size());
 
     return 0;
@@ -52,13 +47,6 @@ void input()
         }
         inputs.push_back(line);
     }
-    // //debug
-    // cout << "print list of inputs:" << endl;
-    // for (string element : inputs)
-    // {
-    //     cout << element << "; ";
-    // }
-    // cout << endl;
 }
 
 int genRand(int max)
@@ -90,13 +78,6 @@ int genRand(int max)
         }
         exists = false;
     }
-    // //debug
-    // cout << "print array of numbers" << endl;
-    // for (int i = 0; i < max; i++)
-    // {
-    //     cout << arr[i] << "; ";
-    // }
-    // cout << endl;
 
     //map 
     map<int, string> mapping;
