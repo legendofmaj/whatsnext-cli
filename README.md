@@ -5,6 +5,9 @@ a cli that sorts strings randomly
 ## Screenshots
 this section should later contain screenshots (from Android, Linux, Windows)
 
+![whatsnext-screenshot-windows](https://github.com/user-attachments/assets/5b1403c0-93b7-4970-9407-525d029c15c5)
+![whatsnext-screenshot-android](https://github.com/user-attachments/assets/05b23072-2a0e-46e8-9d05-916e22b36263)
+
 ## Features
 - sort a modular number of strings in random order
 - works on Windows, Linux and Android (platforms tested)
