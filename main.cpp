@@ -12,6 +12,7 @@ list<string> inputs;
 int genRand(int max);
 void input();
 void mainMenu();
+void closeDialogue();
 
 int main()
 {
@@ -23,6 +24,9 @@ int main()
 
     //generate an array of amount of inputs different values
     genRand(inputs.size());
+
+    //open close dialogue
+    closeDialogue();
 
     return 0;
 }
@@ -138,6 +142,32 @@ void mainMenu()
         else 
         {
             cout << "Unknown command. Type \e[3mhelp\e[0m for additional information" << endl;
+        }
+    }
+}
+
+void closeDialogue()
+{
+    while(true)
+    {
+        cout << "do you want to close the application? [y|n]";
+        char in;
+        cin >> in;
+        if (in == 'y')
+        {
+            break;
+        }
+        else if (in == 'n')
+        {
+            //clear the screen
+            cout << "\033[2J\033[1;1H";
+            main();
+        }
+        else 
+        {
+            cout << "invalid input" << endl;
+            cout << "do you want to close the application? [y|n]";
+            cin >> in;
         }
     }
 }
