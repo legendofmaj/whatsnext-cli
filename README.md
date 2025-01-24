@@ -14,8 +14,8 @@ this section should later contain screenshots (from Android, Linux, Windows)
 ### Windows
 1. Install git (e.g. through [Scoop](https://scoop.sh/))
 2. Install a C++ compiler (e.g. [MSYS2](https://www.msys2.org/)) ([guide](https://code.visualstudio.com/docs/cpp/config-mingw))
-4. clone the repository with `git clone https://github.com/legendofmaj/whatsnext-cli.git`
-5. go into the folder with `cd reponame`
+4. clone this repository with `git clone https://github.com/legendofmaj/whatsnext-cli.git`
+5. go into the folder with `cd whatsnext-cli`
 6. switch to the branch you want with `git checkout branchname`
 7. compile the file with `g++ -o whatsnext.exe main.cpp`
 8. launch the file with `start whatsnext.exe`
@@ -36,7 +36,7 @@ this section should later contain screenshots (from Android, Linux, Windows)
 2. Install git using `pkg install git`
 3. Install clang using `pkg install clang`
 4. clone the repository with `git clone https://github.com/legendofmaj/whatsnext-cli.git`
-5. go into the folder with `cd reponame`
+5. go into the folder with `cd whatsnext-cli`
 6. switch to the branch you want with `git checkout branchname`
 7. compile the file with `clang++ main.cpp -o whatsnext`
 8. launch the file with `./whatsnext`
