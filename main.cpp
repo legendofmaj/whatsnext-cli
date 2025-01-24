@@ -153,7 +153,7 @@ void closeDialogue()
         cin >> in;
         if (in == 'y')
         {
-            break;
+            exit(0);
         }
         else if (in == 'n')
         {
