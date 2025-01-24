@@ -48,3 +48,14 @@ a cli that sorts strings randomly
 9. optional: move the file to bin 
 - move the file with `mv whatsnext /data/data/com.termux/files/usr/bin`
 - launch the app with `whatsnext`
+
+### Linux
+1. Install a compiler (e.g. `sudo dnf install clang` on Fedora)
+2. clone the repository with `git clone https://github.com/legendofmaj/whatsnext-cli.git`
+3. go into the folder with `cd whatsnext-cli`
+4. switch to the branch you want with `git checkout branchname`
+5. compile the file with `clang++ main.cpp -o whatsnext`
+6. launch the file with `./whatsnext`
+7. optional: move the file to bin 
+- move the file with `sudo mv whatsnext /usr/bin`
+- launch the app with `whatsnext`
