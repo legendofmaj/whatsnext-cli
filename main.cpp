@@ -161,15 +161,14 @@ void closeDialogue()
         {
             //clear the screen
             cout << "\033[2J\033[1;1H";
-            //todo: also clear the list
+            //clear the list
             inputs.clear();
             main();
         }
         else 
         {
             cout << "invalid input" << endl;
-            cout << "do you want to close the application? [y|n]";
-            cin >> in;
+            closeDialogue();
         }
     }
 }
