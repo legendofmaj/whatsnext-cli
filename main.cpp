@@ -38,7 +38,7 @@ void input()
     cin >> inputType;
 
     //get items to sort
-    cout << "please enter the objects you want to randomize:" << endl;
+    cout << "please enter the " << inputType << "s you want to randomize:" << endl; 
     cout << "type \e[3mesc\e[0m to stop" << endl;
     string line;
 
