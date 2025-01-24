@@ -11,18 +11,12 @@ using namespace std;
 // - rework / replace main menu logic
 
 //variables
+string inputType;
 list<string> inputs;
 
 int genRand(int max);
 void input();
 void mainMenu();
-
-class SaveSystem
-{
-    public:
-        string inputType;
-};
-SaveSystem generalInfo;
 
 int main()
 {
@@ -42,7 +36,7 @@ void input()
 {
     //get inputType
     cout << "please enter the type of objects you want to randomize: ";
-    cin >> generalInfo.inputType;
+    cin >> inputType;
 
     //get items to sort
     cout << "please enter the objects you want to randomize:" << endl;
@@ -120,7 +114,7 @@ int genRand(int max)
     //print map
     for(auto i : mapping)
     {
-        cout << "Your " << i.first << ". " << generalInfo.inputType << " is " << i.second << endl;
+        cout << "Your " << i.first << ". " << inputType << " is " << i.second << endl;
     }
     return 0;
 }
