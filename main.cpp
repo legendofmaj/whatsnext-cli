@@ -1,154 +1,73 @@
 #include <iostream>
 #include <cstdlib> //library used for random number generation
 #include <map>
-#include <fstream>
-#include <sys/stat.h> //to check if folder is empty
-#include <filesystem> //to list files in a directory, mkdir / rmdir
+#include <list>
 
 using namespace std;
-namespace fs = std::filesystem;
 
-int genRand(int max);
-//save system
-void getFileName();
-void checkForSave();
-void writeFile();
-void getFileLength();
-void readFile(int numStrings);
-void mainMenu();
+//To-Do:
+// - replace input logic [Done]
+// - rework mapping part of genRand [currently stuck]
+// - rework / replace main menu logic
 
 //variables
-string* strings;
+list<string> inputs;
 
+int genRand(int max);
+void input();
+void mainMenu();
+
+//this class will later no longer be necessary
 class SaveSystem
 {
     public:
-        string inputtype;
-        const char* filepath = "/home/michi/Documents/.whatsnext-config/";
+        string inputtype; //= inputs.front()
         string line;
-        bool fileExists = false;
-        int fileLength;
+        int inLength; //= inputs.size()
 };
 SaveSystem generalInfo;
 
 int main()
 {
-    //config system
-    checkForSave();
-    if (generalInfo.fileExists == false)
-    {
-        writeFile();
-        getFileLength();
-        readFile(generalInfo.fileLength);
-    }
-    else
-    {
-        getFileName();
-        getFileLength();
-        readFile(generalInfo.fileLength);
-    }
+    //get user input
+    input();
+    
+    //open main ui
+    //mainMenu();
 
-    mainMenu();
+    //generate an array of inLength different values
+    genRand(inputs.size());
 
-    //generate an array of fileLength different values
-    genRand(generalInfo.fileLength);
-
-    delete[] strings;
     return 0;
 }
 
-void getFileName()
-{
-    int i = 0;
-    string pathName;
-    
-    for (const auto & entry : fs::directory_iterator(generalInfo.filepath))
-    {
-        //cout << entry.path() << endl; //output files in the directory
-        pathName = entry.path();
-        i++;
-    }
-    pathName.erase(pathName.begin(), pathName.begin()+40); //delete the first 40 letters (leave only filename)
-    cout << "Your current config is " << pathName << endl;
-    cout << "There is/are " << i -1 << " other files in the config folder. Their usage will be implemented later" << endl;
-    generalInfo.inputtype = pathName;
-}
-
-void checkForSave()
-{
-    //limitation: doesn't work if the folder is empty
-    struct stat sb;
-    if (stat(generalInfo.filepath, &sb) == 0) 
-    {
-        //check if folder is empty here
-        generalInfo.fileExists = true;
-    }
-    else 
-    {
-        generalInfo.fileExists = false;
-    }
-}
-
-void writeFile()
+void input()
 {
     string line;
 
-	cout << "No save data exists yet." << endl;
-	cout << "If you have entered all your strings, type esc to stop!" << endl;
-
-    //create folder
-    filesystem::create_directory(generalInfo.filepath) == -1;
-    //get name
-    cout << "Enter the type of input you wish to use ";
-    cin >> generalInfo.inputtype;
-
-    cout << "Now enter the names of each " << generalInfo.inputtype << endl;
-
-	ofstream saveFile(generalInfo.filepath + generalInfo.inputtype);
-	while(true)
-	{
-		cin >> line;
-		if (line == "esc") 
-		{
-			break;
-		}
-		saveFile << line << endl;
-	}
-	saveFile.close();  
-}
-
-void getFileLength()
-{
-	string line;
-
-	ifstream saveFile(generalInfo.filepath + generalInfo.inputtype);
-	while(getline(saveFile, line)) //As soon as no new lines can be read the function is quit
-	{
-		generalInfo.fileLength++;
-	}
-	saveFile.close();
-}
-
-void readFile(int numStrings)
-{
-    string line;
-	int i = 0;
-
-	//Allocate memory
-	strings = new string[numStrings];
-
-	ifstream saveFile(generalInfo.filepath + generalInfo.inputtype);
-	while(getline(saveFile, line))
-	{
-		strings[i] = line;
-		i++;
-	}
-	saveFile.close();
+    while(true)
+    {
+        cin >> line;
+        if (line == "esc")
+        {
+            break;
+        }
+        inputs.push_back(line);
+    }
+    //debug
+    cout << "print list of inputs:" << endl;
+    for (string element : inputs)
+    {
+        cout << element << "; ";
+    }
+    cout << endl;
 }
 
 int genRand(int max)
 {
-    int arr[max];
+    //dynamically allocate an array
+    int* arr = new int [max];
+
     bool exists = false;
     srand(time(NULL));
     for (int i=0;i<max;i++)
@@ -173,12 +92,25 @@ int genRand(int max)
         }
         exists = false;
     }
-
-    //map
-    map<int, string> mapping;
-    for (int i=0;i<max;i++)
+    //debug
+    cout << "print array of numbers" << endl;
+    for (int i = 0; i < max; i++)
     {
-        mapping.insert(make_pair(arr[i], strings[i]));
+        cout << arr[i] << "; ";
+    }
+    cout << endl;
+
+    //map 
+    map<int, string> mapping;
+
+    int numCounter = 0;
+    int arrVal = arr[numCounter];
+
+    for (auto i = inputs.cbegin(); i != inputs.cend(); i++)
+    {
+        mapping[arrVal] = *i;
+        numCounter++;
+        arrVal = arr[numCounter];
     }
 
     //print map
@@ -189,51 +121,46 @@ int genRand(int max)
     return 0;
 }
 
-void mainMenu()
-{
-    //main menu
-    cout << "Welcome to \033[1mwhatsnext-cli\033[0m" << endl;
-    cout << "Type \e[3mhelp\e[0m for additional information" << endl;
+// void mainMenu()
+// {
+//     //main menu
+//     cout << "Welcome to \033[1mwhatsnext-cli\033[0m" << endl;
+//     cout << "Type \e[3mhelp\e[0m for additional information" << endl;
 
-    //look for input
-    string in;
-    while (true)
-    {
-        cin >> in;
-        if (in == "help")
-        {
-            //print all commands
-            cout << "\e[4mlist of help commands\e[0m: " << endl;
-            cout << "help -> get a list of commands" << endl;
-            cout << "exit -> quit the program" << endl;
-            cout << "clear -> clear the terminal" << endl;
-            cout << "start -> start the program with the default configuration" << endl;
-            cout << "delete -> delete the current configuration" << endl;
-            cout << "\e[1mmore commands will be added in the future\e[0m" << endl;
-            cin >> in;
-        }
-        if (in == "exit")
-        {
-            //close program
-            exit(0);
-        }
-        if (in == "start")
-        {
-            break;
-        }
-        if (in == "clear")
-        {
-            //command that clears the console on all platforms
-            cout << "\033[2J\033[1;1H";
-        }
-        if (in == "delete")
-        {
-            filesystem::remove_all(generalInfo.filepath);
-            cout << "The current configuration has been deleted" << endl;
-        }
-        else 
-        {
-            cout << "Unknown command. Type \e[3mhelp\e[0m for additional information" << endl;
-        }
-    }
-}
+//     //look for input
+//     string in;
+//     while (true)
+//     {
+//         cin >> in;
+//         if (in == "help")
+//         {
+//             //print all commands
+//             cout << "\e[4mlist of help commands\e[0m: " << endl;
+//             cout << "help -> get a list of commands" << endl;
+//             cout << "exit -> quit the program" << endl;
+//             cout << "clear -> clear the terminal" << endl;
+//             cout << "start -> start the program with the default configuration" << endl;
+//             cout << "delete -> delete the current configuration" << endl;
+//             cout << "\e[1mmore commands will be added in the future\e[0m" << endl;
+//             cin >> in;
+//         }
+//         if (in == "exit")
+//         {
+//             //close program
+//             exit(0);
+//         }
+//         if (in == "start")
+//         {
+//             break;
+//         }
+//         if (in == "clear")
+//         {
+//             //command that clears the console on all platforms
+//             cout << "\033[2J\033[1;1H";
+//         }
+//         else 
+//         {
+//             cout << "Unknown command. Type \e[3mhelp\e[0m for additional information" << endl;
+//         }
+//     }
+// }
