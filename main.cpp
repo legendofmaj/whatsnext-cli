@@ -86,12 +86,12 @@ int genRand(int max)
     //map
     map<int, string> mapping;
 
-    int numCounter = 0;
+    int count = 0;
 
     for (auto i = inputs.cbegin(); i != inputs.cend(); i++)
     {
-        mapping[arr[numCounter]] = *i;
-        numCounter++;
+        mapping[arr[count]] = *i;
+        count++;
     }
 
     //print map
