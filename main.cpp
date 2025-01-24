@@ -27,11 +27,11 @@ SaveSystem generalInfo;
 int main()
 {
     //open main ui
-    //mainMenu();
+    mainMenu();
 
     //get user input
     input();
-    
+
     //generate an array of inLength different values
     genRand(inputs.size());
 
@@ -46,6 +46,7 @@ void input()
 
     //get items to sort
     cout << "please enter the objects you want to randomize:" << endl;
+    cout << "type \e[3mesc\e[0m to stop" << endl;
     string line;
 
     while(true)
@@ -124,46 +125,45 @@ int genRand(int max)
     return 0;
 }
 
-// void mainMenu()
-// {
-//     //main menu
-//     cout << "Welcome to \033[1mwhatsnext-cli\033[0m" << endl;
-//     cout << "Type \e[3mhelp\e[0m for additional information" << endl;
+void mainMenu()
+{
+    //main menu
+    cout << "Welcome to \033[1mwhatsnext-cli\033[0m" << endl;
+    cout << "Type \e[3mhelp\e[0m for additional information" << endl;
 
-//     //look for input
-//     string in;
-//     while (true)
-//     {
-//         cin >> in;
-//         if (in == "help")
-//         {
-//             //print all commands
-//             cout << "\e[4mlist of help commands\e[0m: " << endl;
-//             cout << "help -> get a list of commands" << endl;
-//             cout << "exit -> quit the program" << endl;
-//             cout << "clear -> clear the terminal" << endl;
-//             cout << "start -> start the program with the default configuration" << endl;
-//             cout << "delete -> delete the current configuration" << endl;
-//             cout << "\e[1mmore commands will be added in the future\e[0m" << endl;
-//             cin >> in;
-//         }
-//         if (in == "exit")
-//         {
-//             //close program
-//             exit(0);
-//         }
-//         if (in == "start")
-//         {
-//             break;
-//         }
-//         if (in == "clear")
-//         {
-//             //command that clears the console on all platforms
-//             cout << "\033[2J\033[1;1H";
-//         }
-//         else 
-//         {
-//             cout << "Unknown command. Type \e[3mhelp\e[0m for additional information" << endl;
-//         }
-//     }
-// }
+    //look for input
+    string in;
+    while (true)
+    {
+        cin >> in;
+        if (in == "help")
+        {
+            //print all commands
+            cout << "\e[4mlist of help commands\e[0m: " << endl;
+            cout << "help -> get a list of commands" << endl;
+            cout << "exit -> quit the program" << endl;
+            cout << "clear -> clear the terminal" << endl;
+            cout << "start -> start the program with the default configuration" << endl;
+            cout << "\e[1mmore commands will be added in the future\e[0m" << endl;
+            cin >> in;
+        }
+        if (in == "exit")
+        {
+            //close program
+            exit(0);
+        }
+        if (in == "start")
+        {
+            break;
+        }
+        if (in == "clear")
+        {
+            //command that clears the console on all platforms
+            cout << "\033[2J\033[1;1H";
+        }
+        else 
+        {
+            cout << "Unknown command. Type \e[3mhelp\e[0m for additional information" << endl;
+        }
+    }
+}
