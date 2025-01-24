@@ -161,6 +161,8 @@ void closeDialogue()
         {
             //clear the screen
             cout << "\033[2J\033[1;1H";
+            //todo: also clear the list
+            inputs.clear();
             main();
         }
         else 
