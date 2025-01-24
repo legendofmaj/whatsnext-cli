@@ -87,13 +87,11 @@ int genRand(int max)
     map<int, string> mapping;
 
     int numCounter = 0;
-    int arrVal = arr[numCounter];
 
     for (auto i = inputs.cbegin(); i != inputs.cend(); i++)
     {
-        mapping[arrVal] = *i;
+        mapping[arr[numCounter]] = *i;
         numCounter++;
-        arrVal = arr[numCounter];
     }
 
     //print map
