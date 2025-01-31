@@ -51,6 +51,8 @@ void input()
         }
         inputs.push_back(line);
     }
+    //clear the screen
+    cout << "\033[2J\033[1;1H";
 }
 
 int genRand(int max)
