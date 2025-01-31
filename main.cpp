@@ -101,6 +101,8 @@ int genRand(int max)
     {
         cout << "Your " << i.first << ". " << inputType << " is " << i.second << endl;
     }
+
+    delete[] arr;
     return 0;
 }
 
