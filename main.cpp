@@ -1,11 +1,12 @@
 #include <iostream>
-#include <cstdlib> //library used for random number generation
+#include <string>
+#include <cstdlib>  // library used for random number generation
 #include <map>
 #include <list>
 
 using namespace std;
 
-//variables
+// variables
 string inputType;
 list<string> inputs;
 
@@ -16,16 +17,16 @@ void closeDialogue();
 
 int main()
 {
-    //open main ui
+    // open main ui
     mainMenu();
 
-    //get user input
+    // get user input
     input();
 
-    //generate an array of amount of inputs different values
+    // generate an array of amount of inputs different values
     genRand(inputs.size());
 
-    //open close dialogue
+    // open close dialogue
     closeDialogue();
 
     return 0;
@@ -33,12 +34,12 @@ int main()
 
 void input()
 {
-    //get inputType
+    // get inputType
     cout << "please enter the type of objects you want to randomize: ";
     cin >> inputType;
 
-    //get items to sort
-    cout << "please enter the " << inputType << "s you want to randomize:" << endl; 
+    // get items to sort
+    cout << "please enter the " << inputType << "s you want to randomize:" << endl;
     cout << "type \e[3mesc\e[0m to stop" << endl;
     string line;
 
@@ -51,13 +52,13 @@ void input()
         }
         inputs.push_back(line);
     }
-    //clear the screen
+    // clear the screen
     cout << "\033[2J\033[1;1H";
 }
 
 int genRand(int max)
 {
-    //dynamically allocate an array
+    // dynamically allocate an array
     int* arr = new int [max];
 
     bool exists = false;
@@ -66,7 +67,7 @@ int genRand(int max)
     {
         int val = (rand() % max)+1;
 
-        //check for val in array
+        // check for val in array
         for (int i=0;i<max;i++)
         {
             if(arr[i] == val)
@@ -85,7 +86,7 @@ int genRand(int max)
         exists = false;
     }
 
-    //map
+    // map
     map<int, string> mapping;
 
     int count = 0;
@@ -96,7 +97,7 @@ int genRand(int max)
         count++;
     }
 
-    //print map
+    // print map
     for(auto i : mapping)
     {
         cout << "Your " << i.first << ". " << inputType << " is " << i.second << endl;
@@ -108,18 +109,18 @@ int genRand(int max)
 
 void mainMenu()
 {
-    //main menu
+    // main menu
     cout << "Welcome to \033[1mwhatsnext-cli\033[0m" << endl;
     cout << "Type \e[3mhelp\e[0m for additional information" << endl;
 
-    //look for input
+    // look for input
     string in;
     while (true)
     {
         cin >> in;
         if (in == "help")
         {
-            //print all commands
+            // print all commands
             cout << "\e[4mlist of help commands\e[0m: " << endl;
             cout << "help -> get a list of commands" << endl;
             cout << "exit -> quit the program" << endl;
@@ -129,7 +130,7 @@ void mainMenu()
         }
         if (in == "exit")
         {
-            //close program
+            // close program
             exit(0);
         }
         if (in == "start")
@@ -138,7 +139,7 @@ void mainMenu()
         }
         if (in == "clear")
         {
-            //command that clears the console on all platforms
+            // command that clears the console on all platforms
             cout << "\033[2J\033[1;1H";
         }
         else 
@@ -161,9 +162,9 @@ void closeDialogue()
         }
         else if (in == 'n')
         {
-            //clear the screen
+            // clear the screen
             cout << "\033[2J\033[1;1H";
-            //clear the list
+            // clear the list
             inputs.clear();
             main();
         }
