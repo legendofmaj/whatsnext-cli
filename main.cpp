@@ -46,37 +46,21 @@ void input()
 
     while(true)
     {
-        undo = false; //might not work
+        undo = false;
         cin >> line;
         if (line == "esc")
         {
             break;
         }
         else if (line == "undo")
-        {
-            // //print entire list
-            // cout << "debug: list contents" << endl;
-            // for (string listElement : inputs)
-            // {
-            //     cout << listElement << endl;
-            // }
-            
-            inputs.pop_back(); // remove the last input
-            // cout << inputs.empty() << endl;//debug: check if list is empty
+        {            
+            inputs.pop_back();
             undo = true;
         }
         if (undo == false)
         {
             inputs.push_back(line);
         }
-
-            // //debug: print entire list
-            // cout << "debug: list contents" << endl;
-            // for (string listElement : inputs)
-            // {
-            //     cout << listElement << endl;
-            // }
-
     }
     // clear the screen
     cout << "\033[2J\033[1;1H";
