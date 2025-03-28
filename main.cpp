@@ -34,6 +34,9 @@ int main()
 
 void input()
 {
+    string line;
+    bool undo = false;
+
     // get inputType
     cout << "please enter the type of objects you want to randomize: ";
     cin >> inputType;
@@ -41,13 +44,11 @@ void input()
     // get items to sort
     cout << "please enter the " << inputType << "s you want to randomize:" << endl;
     cout << "type \e[3mesc\e[0m to stop" << endl;
-    string line;
-    bool undo = false;
 
     while(true)
-    {
+    {   
         undo = false;
-        cin >> line;
+        getline(cin, line);
         if (line == "esc")
         {
             break;
@@ -57,11 +58,12 @@ void input()
             inputs.pop_back();
             undo = true;
         }
-        if (undo == false)
+        if (undo == false && line.empty() == false)
         {
             inputs.push_back(line);
         }
     }
+    
     // clear the screen
     cout << "\033[2J\033[1;1H";
 }
