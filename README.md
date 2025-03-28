@@ -32,7 +32,7 @@ a cli that sorts strings randomly
     &nbsp;&nbsp;&nbsp;&nbsp;- choose path and click edit <br>
     &nbsp;&nbsp;&nbsp;&nbsp;- choose new and add the path to your bin directory <br>
     &nbsp;&nbsp;&nbsp;&nbsp;- click ok to all the close dialogues <br>
-• launch the app with `whatsnext` in any terminal
+• launch the app with <code>whatsnext</code> in any terminal
 </details>
 
 ### Android
@@ -47,8 +47,8 @@ a cli that sorts strings randomly
 <details>
 <summary>9. optional: move the file to bin </summary>
 <br>
-• move the file with `mv whatsnext /data/data/com.termux/files/usr/bin` <br>
-• launch the app with `whatsnext`
+• move the file with <code>mv whatsnext /data/data/com.termux/files/usr/bin</code> <br>
+• launch the app with <code>whatsnext</code>
 </details>
 
 ### Linux
@@ -61,6 +61,6 @@ a cli that sorts strings randomly
 <details>
 <summary>7. optional: move the file to bin </summary>
 <br>
-• move the file with `sudo mv whatsnext /usr/bin` <br>
-• launch the app with `whatsnext`
+• move the file with <code>sudo mv whatsnext /usr/bin</code> <br>
+• launch the app with <code>whatsnext</code>
 </details>
