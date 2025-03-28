@@ -23,17 +23,16 @@ a cli that sorts strings randomly
 8. launch the file with `start whatsnext.exe`
 <details>
 <summary>9. optional: move the file to bin:</summary>
-<br>
--  make sure a bin directory is present e.g.: C:\Users\YourUsername\bin
--  move whatsnext.exe to the directory
-- add bin directory to your PATH:
-    - open settings
-    - search for path and choose "edit the system environment variables"
-    - click on environment variables
-    - choose path and click edit
-    - choose new and add the path to your bin directory
-    - click ok to all the close dialogues
-- launch the app with `whatsnext` in any terminal
+•  make sure a bin directory is present e.g.: C:\Users\YourUsername\bin <br>
+•  move whatsnext.exe to the directory <br>
+• add bin directory to your PATH: <br>
+    - open settings <br>
+    - search for path and choose "edit the system environment variables" <br>
+    - click on environment variables <br>
+    - choose path and click edit <br>
+    - choose new and add the path to your bin directory <br>
+    - click ok to all the close dialogues <br>
+• launch the app with `whatsnext` in any terminal
 </details>
 
 ### Android
@@ -48,8 +47,8 @@ a cli that sorts strings randomly
 <details>
 <summary>9. optional: move the file to bin </summary>
 <br>
-- move the file with `mv whatsnext /data/data/com.termux/files/usr/bin`
-- launch the app with `whatsnext`
+• move the file with `mv whatsnext /data/data/com.termux/files/usr/bin` <br>
+• launch the app with `whatsnext`
 </details>
 
 ### Linux
@@ -62,6 +61,6 @@ a cli that sorts strings randomly
 <details>
 <summary>7. optional: move the file to bin </summary>
 <br>
-- move the file with `sudo mv whatsnext /usr/bin`
-- launch the app with `whatsnext`
+• move the file with `sudo mv whatsnext /usr/bin` <br>
+• launch the app with `whatsnext`
 </details>
