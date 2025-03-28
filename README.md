@@ -30,7 +30,7 @@ a cli that sorts strings randomly
 </details>
 
 <details>
-- <summary>Linux</summary>
+<summary>Linux</summary>
 • move the file with <code>sudo mv whatsnext /usr/bin</code> <br>
 • launch the app with <code>whatsnext</code>
 </details>
