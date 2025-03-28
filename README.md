@@ -15,6 +15,7 @@ a cli that sorts strings randomly
 - go to the [release page](https://github.com/legendofmaj/whatsnext-cli/releases) of the project
 - choose the release for your platform (for Android choose the Linux version)
 - move the file to your bin directory
+<details>
 <summary>Windows</summary>
 •  make sure a bin directory is present e.g.: <code>C:\Users\YourUsername\bin</code> <br>
 •  move <code>whatsnext.exe</code> to the directory <br>
@@ -27,14 +28,15 @@ a cli that sorts strings randomly
     &nbsp;&nbsp;&nbsp;&nbsp;- click <code>ok</code> to all the close dialogues <br>
 • launch the app with <code>whatsnext</code> in any terminal
 </details>
+
+<details>
 - <summary>Linux</summary>
-<br>
 • move the file with <code>sudo mv whatsnext /usr/bin</code> <br>
 • launch the app with <code>whatsnext</code>
 </details>
+
 <details>
 <summary>Android</summary>
-<br>
 • move the file with <code>mv whatsnext /data/data/com.termux/files/usr/bin</code> <br>
 • launch the app with <code>whatsnext</code>
 </details>
@@ -74,7 +76,6 @@ a cli that sorts strings randomly
 8. launch the file with `./whatsnext`
 <details>
 <summary>9. optional: move the file to bin </summary>
-<br>
 • move the file with <code>mv whatsnext /data/data/com.termux/files/usr/bin</code> <br>
 • launch the app with <code>whatsnext</code>
 </details>
@@ -88,7 +89,6 @@ a cli that sorts strings randomly
 6. launch the file with `./whatsnext`
 <details>
 <summary>7. optional: move the file to bin </summary>
-<br>
 • move the file with <code>sudo mv whatsnext /usr/bin</code> <br>
 • launch the app with <code>whatsnext</code>
 </details>
