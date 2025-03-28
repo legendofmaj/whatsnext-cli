@@ -26,12 +26,14 @@ a cli that sorts strings randomly
 •  make sure a bin directory is present e.g.: C:\Users\YourUsername\bin <br>
 •  move whatsnext.exe to the directory <br>
 • add bin directory to your PATH: <br>
-    - open settings <br>
-    - search for path and choose "edit the system environment variables" <br>
-    - click on environment variables <br>
-    - choose path and click edit <br>
-    - choose new and add the path to your bin directory <br>
-    - click ok to all the close dialogues <br>
+<ol>
+    <li>- open settings </li> <br>
+    <li>- search for path and choose "edit the system environment variables" </li> <br>
+    <li>- click on environment variables </li> <br>
+    <li>- choose path and click edit </li> <br>
+    <li>- choose new and add the path to your bin directory </li> <br>
+    <li>- click ok to all the close dialogues </li> <br>
+</ol>
 • launch the app with `whatsnext` in any terminal
 </details>
 
