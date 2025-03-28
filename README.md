@@ -23,15 +23,15 @@ a cli that sorts strings randomly
 8. launch the file with `start whatsnext.exe`
 <details>
 <summary>9. optional: move the file to bin:</summary>
-•  make sure a bin directory is present e.g.: C:\Users\YourUsername\bin <br>
-•  move whatsnext.exe to the directory <br>
+•  make sure a bin directory is present e.g.: <code>C:\Users\YourUsername\bin</code> <br>
+•  move <code>whatsnext.exe</code> to the directory <br>
 • add bin directory to your PATH: <br>
     &nbsp;&nbsp;&nbsp;&nbsp;- open settings <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;- search for path and choose "edit the system environment variables" <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;- click on environment variables <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;- choose path and click edit <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;- choose new and add the path to your bin directory <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;- click ok to all the close dialogues <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- search for path and choose <code>edit the system environment variables</code> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- click on <code>environment variables</code> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- choose <code>path</code> and click <code>edit</code> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- choose <code>new</code> and add the path to your bin directory <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- click <code>ok</code> to all the close dialogues <br>
 • launch the app with <code>whatsnext</code> in any terminal
 </details>
 
