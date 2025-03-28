@@ -16,13 +16,13 @@ a cli that sorts strings randomly
 ### Windows
 1. Install git (e.g. through [Scoop](https://scoop.sh/))
 2. Install a C++ compiler (e.g. [MSYS2](https://www.msys2.org/)) ([guide](https://code.visualstudio.com/docs/cpp/config-mingw))
-4. clone this repository with `git clone https://github.com/legendofmaj/whatsnext-cli.git`
-5. go into the folder with `cd whatsnext-cli`
-6. switch to the branch you want with `git checkout branchname`
-7. compile the file with `g++ -o whatsnext.exe main.cpp`
-8. launch the file with `start whatsnext.exe`
+3. clone this repository with `git clone https://github.com/legendofmaj/whatsnext-cli.git`
+4. go into the folder with `cd whatsnext-cli`
+5. switch to the branch you want with `git checkout branchname`
+6. compile the file with `g++ -o whatsnext.exe main.cpp`
+7. launch the file with `start whatsnext.exe`
 <details>
-<summary>9. optional: move the file to bin:</summary>
+<summary>8. optional: move the file to bin:</summary>
 •  make sure a bin directory is present e.g.: <code>C:\Users\YourUsername\bin</code> <br>
 •  move <code>whatsnext.exe</code> to the directory <br>
 • add bin directory to your PATH: <br>
