@@ -11,6 +11,34 @@ a cli that sorts strings randomly
 - sort a modular number of strings in random order
 - works on Windows, Linux and Android (platforms tested)
 
+## Installation
+- go to the [release page](https://github.com/legendofmaj/whatsnext-cli/releases) of the project
+- choose the release for your platform (for Android choose the Linux version)
+- move the file to your bin directory
+<summary>Windows</summary>
+•  make sure a bin directory is present e.g.: <code>C:\Users\YourUsername\bin</code> <br>
+•  move <code>whatsnext.exe</code> to the directory <br>
+• add bin directory to your PATH: <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- open settings <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- search for path and choose <code>edit the system environment variables</code> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- click on <code>environment variables</code> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- choose <code>path</code> and click <code>edit</code> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- choose <code>new</code> and add the path to your bin directory <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- click <code>ok</code> to all the close dialogues <br>
+• launch the app with <code>whatsnext</code> in any terminal
+</details>
+- <summary>Linux</summary>
+<br>
+• move the file with <code>sudo mv whatsnext /usr/bin</code> <br>
+• launch the app with <code>whatsnext</code>
+</details>
+<details>
+<summary>Android</summary>
+<br>
+• move the file with <code>mv whatsnext /data/data/com.termux/files/usr/bin</code> <br>
+• launch the app with <code>whatsnext</code>
+</details>
+
 ## Build from source
 
 ### Windows
