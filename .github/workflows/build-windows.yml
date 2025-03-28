@@ -1,0 +1,26 @@
+name: build for windows
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: compile
+      run: g++ main.cpp -o whatsnext.exe
+
+    - name: upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: whatsnext-windows
+        path: whatsnext.exe
+        
