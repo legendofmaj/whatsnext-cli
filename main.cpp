@@ -12,13 +12,23 @@ list<string> inputs;
 
 int genRand(int max);
 void input();
-void mainMenu();
+void mainMenu(string in);
 void closeDialogue();
 
-int main()
+int main(int argc, const char* argv[])
 {
+    // check if flags were passed
+    string menuInput;   
+    for(int i=0; i<argc; ++i)
+    {
+        if (string(argv[i])=="-s" || string(argv[i])=="--start")
+        {
+            menuInput = "start";
+        }
+    }
+
     // open main ui
-    mainMenu();
+    mainMenu(menuInput);
 
     // get user input
     input();
@@ -119,17 +129,20 @@ int genRand(int max)
     return 0;
 }
 
-void mainMenu()
+void mainMenu(string in)
 {
     // main menu
     cout << "Welcome to \033[1mwhatsnext-cli\033[0m" << endl;
     cout << "Type \e[3mhelp\e[0m for additional information" << endl;
 
     // look for input
-    string in;
+    //string in;
     while (true)
     {
-        cin >> in;
+        if(in.empty()==true)
+        {
+            cin >> in;
+        }
         if (in == "help")
         {
             // print all commands
@@ -178,7 +191,7 @@ void closeDialogue()
             cout << "\033[2J\033[1;1H";
             // clear the list
             inputs.clear();
-            main();
+            main(0, 0); // debug: possible source for errors. 0 is not a char.
         }
         else 
         {
