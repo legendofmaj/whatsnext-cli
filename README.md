@@ -11,7 +11,7 @@ a cli that sorts strings randomly
 - sort a modular number of strings in random order
 - works on Windows, Linux and Android (platforms tested)
 
-## Installation
+## Build from source
 
 ### Windows
 1. Install git (e.g. through [Scoop](https://scoop.sh/))
@@ -21,7 +21,9 @@ a cli that sorts strings randomly
 6. switch to the branch you want with `git checkout branchname`
 7. compile the file with `g++ -o whatsnext.exe main.cpp`
 8. launch the file with `start whatsnext.exe`
-9. optional: move the file to bin:
+<details>
+<summary>9. optional: move the file to bin:</summary>
+<br>
 -  make sure a bin directory is present e.g.: C:\Users\YourUsername\bin
 -  move whatsnext.exe to the directory
 - add bin directory to your PATH:
@@ -32,6 +34,7 @@ a cli that sorts strings randomly
     - choose new and add the path to your bin directory
     - click ok to all the close dialogues
 - launch the app with `whatsnext` in any terminal
+</details>
 
 ### Android
 1. Download Termux from [F-Droid](https://f-droid.org/en/packages/com.termux/) or [GitHub](https://github.com/termux/termux-app)
@@ -42,9 +45,12 @@ a cli that sorts strings randomly
 6. switch to the branch you want with `git checkout branchname`
 7. compile the file with `clang++ main.cpp -o whatsnext`
 8. launch the file with `./whatsnext`
-9. optional: move the file to bin 
+<details>
+<summary>9. optional: move the file to bin </summary>
+<br>
 - move the file with `mv whatsnext /data/data/com.termux/files/usr/bin`
 - launch the app with `whatsnext`
+</details>
 
 ### Linux
 1. Install a compiler (e.g. `sudo dnf install clang` on Fedora)
@@ -53,6 +59,9 @@ a cli that sorts strings randomly
 4. switch to the branch you want with `git checkout branchname`
 5. compile the file with `clang++ main.cpp -o whatsnext`
 6. launch the file with `./whatsnext`
-7. optional: move the file to bin 
+<details>
+<summary>7. optional: move the file to bin </summary>
+<br>
 - move the file with `sudo mv whatsnext /usr/bin`
 - launch the app with `whatsnext`
+</details>
