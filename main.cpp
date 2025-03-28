@@ -6,7 +6,6 @@
 
 using namespace std;
 
-// variables
 string inputType;
 list<string> inputs;
 
@@ -113,7 +112,7 @@ int genRand(int max)
 
     int count = 0;
 
-    for (auto i = inputs.cbegin(); i != inputs.cend(); i++)
+    for (auto i=inputs.cbegin();i!=inputs.cend();i++)
     {
         mapping[arr[count]] = *i;
         count++;
@@ -136,7 +135,6 @@ void mainMenu(string in)
     cout << "Type \e[3mhelp\e[0m for additional information" << endl;
 
     // look for input
-    //string in;
     while (true)
     {
         if(in.empty()==true)
