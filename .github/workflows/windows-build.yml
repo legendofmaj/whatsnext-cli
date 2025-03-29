@@ -21,7 +21,7 @@ jobs:
         g++ --version 
         gdb --version
     - name: compile
-      run: g++ main.cpp -o whatsnext.exe
+      run: g++ -static main.cpp -o whatsnext.exe
 
     - name: upload artifact
       uses: actions/upload-artifact@v4
