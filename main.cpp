@@ -165,6 +165,11 @@ void mainMenu(string in)
             // command that clears the console on all platforms
             cout << "\033[2J\033[1;1H";
         }
+        if (in == "version")
+        {
+            cout << "V1.1" << endl;
+            cin >> in;
+        }
         else 
         {
             cout << "Unknown command. Type \e[3mhelp\e[0m for additional information" << endl;
