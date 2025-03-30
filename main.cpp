@@ -24,6 +24,10 @@ int main(int argc, const char* argv[])
         {
             menuInput = "start";
         }
+        if (string(argv[i])=="-v" || string(argv[i])=="--version")
+        {
+            menuInput = "version";
+        }
     }
 
     // open main ui
