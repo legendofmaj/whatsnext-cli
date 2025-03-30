@@ -24,7 +24,7 @@ int main(int argc, const char* argv[])
         {
             menuInput = "start";
         }
-        if (string(argv[i])=="-v" || string(argv[i])=="--version")
+        else if (string(argv[i])=="-v" || string(argv[i])=="--version")
         {
             menuInput = "version";
         }
@@ -145,7 +145,7 @@ void mainMenu(string in)
         {
             cin >> in;
         }
-        if (in == "help")
+        else if (in == "help")
         {
             // print all commands
             cout << "\e[4mlist of help commands\e[0m: " << endl;
@@ -155,21 +155,21 @@ void mainMenu(string in)
             cout << "start -> start the program with the default configuration" << endl;
             cin >> in;
         }
-        if (in == "exit")
+        else if (in == "exit")
         {
             // close program
             exit(0);
         }
-        if (in == "start")
+        else if (in == "start")
         {
             break;
         }
-        if (in == "clear")
+        else if (in == "clear")
         {
             // command that clears the console on all platforms
             cout << "\033[2J\033[1;1H";
         }
-        if (in == "version")
+        else if (in == "version")
         {
             cout << "V1.1" << endl;
             cin >> in;
