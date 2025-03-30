@@ -2,9 +2,15 @@ name: build for linux
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
   pull_request:
     branches: [ "main" ]
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
   workflow_dispatch:
 
 jobs:
