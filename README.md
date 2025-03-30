@@ -14,7 +14,9 @@ a cli that sorts strings randomly
 ## Installation
 - go to the [release page](https://github.com/legendofmaj/whatsnext-cli/releases) of the project
 - choose the release for your platform (for Android choose the Linux version)
+- rename the file to `whatsnext`
 - move the file to your bin directory
+### steps specific to each platform
 <details>
 <summary>Windows</summary>
 •  make sure a bin directory is present e.g.: <code>C:\Users\YourUsername\bin</code> <br>
@@ -31,6 +33,7 @@ a cli that sorts strings randomly
 
 <details>
 <summary>Linux</summary>
+• make the file executable with <code>chmod a+x whatsnext</code> <br>
 • move the file with <code>sudo mv whatsnext /usr/bin</code> <br>
 • launch the app with <code>whatsnext</code>
 </details>
