@@ -71,27 +71,23 @@ a cli that sorts strings randomly
 ### Android
 1. Download Termux from [F-Droid](https://f-droid.org/en/packages/com.termux/) or [GitHub](https://github.com/termux/termux-app)
 2. Install git using `pkg install git`
-3. Install clang using `pkg install clang`
-4. clone the repository with `git clone https://github.com/legendofmaj/whatsnext-cli.git`
-5. go into the folder with `cd whatsnext-cli`
-6. switch to the branch you want with `git checkout branchname`
-7. compile the file with `clang++ main.cpp -o whatsnext`
-8. launch the file with `./whatsnext`
+3. clone the repository with `git clone https://github.com/legendofmaj/whatsnext-cli.git`
+4. go into the folder with `cd whatsnext-cli`
+5. compile the file with `g++ main.cpp -o whatsnext`
+6. launch the file with `./whatsnext`
 <details>
-<summary>9. optional: move the file to bin </summary>
+<summary>7. optional: move the file to bin </summary>
 • move the file with <code>mv whatsnext /data/data/com.termux/files/usr/bin</code> <br>
 • launch the app with <code>whatsnext</code>
 </details>
 
 ### Linux
-1. Install a compiler (e.g. `sudo dnf install clang` on Fedora)
-2. clone the repository with `git clone https://github.com/legendofmaj/whatsnext-cli.git`
-3. go into the folder with `cd whatsnext-cli`
-4. switch to the branch you want with `git checkout branchname`
-5. compile the file with `clang++ main.cpp -o whatsnext`
-6. launch the file with `./whatsnext`
+1. clone the repository with `git clone https://github.com/legendofmaj/whatsnext-cli.git`
+2. go into the folder with `cd whatsnext-cli`
+3. compile the file with `g++ main.cpp -o whatsnext`
+4. launch the file with `./whatsnext`
 <details>
-<summary>7. optional: move the file to bin </summary>
+<summary>5. optional: move the file to bin </summary>
 • move the file with <code>sudo mv whatsnext /usr/bin</code> <br>
 • launch the app with <code>whatsnext</code>
 </details>
