@@ -3,9 +3,8 @@
 a cli that sorts strings randomly
 
 ## Screenshots
-
-<img src="https://github.com/user-attachments/assets/3c9d27b4-ecf8-46ba-b960-253e33aec089" height = 375 />
-<img src="https://github.com/user-attachments/assets/05b23072-2a0e-46e8-9d05-916e22b36263" width = 175 />
+<img height="375" alt="whatsnext-cli running on a Linux terminal" src="https://github.com/user-attachments/assets/4eb4dbc5-0267-4a58-b172-457d7bc0385a" />
+<img width="175" alt="whatsnext-cli running on Android via Termux" src="https://github.com/user-attachments/assets/3272074c-3a49-425e-8f08-1685bfc76993" />
 
 ## Features
 - sort a modular number of strings in random order
